@@ -366,60 +366,153 @@
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 100px;
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-            
-            .nav-menu {
-                gap: 15px;
-                padding: 10px;
-            }
-            
-            .nav-menu a {
-                padding: 8px 15px;
-                font-size: 1em;
-            }
-            
-            h1 {
-                font-size: 2.5em;
-                padding: var(--spacing-sm);
-                margin: 30px 0;
-            }
-            
-            section {
-                padding: 25px;
-                margin: var(--spacing-sm) 0;
-            }
-            
-            .experience-container {
-                gap: 15px;
-            }
-            
-            .job-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-            }
-            
-            .job-date {
-                align-self: flex-start;
-            }
+       /* MOBILE FIRST MEDIA QUERIES */
+/* =========================== */
 
-        .social-container {
+/* TABLET STYLES (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Header changes */
+    h1 {
+        font-size: 3rem; /* 1st change */
+        letter-spacing: 1.5px; /* 2nd change */
+    }
+    
+    h2 {
+        font-size: 2rem; /* 1st change */
+        color: #764ba2; /* 2nd change */
+    }
+    
+    /* Navigation changes */
+    .nav-menu {
+        gap: 25px; /* 1st change */
+        padding: 15px 20px; /* 2nd change */
+    }
+    
+    /* Section changes */
+    section {
+        padding: 30px; /* 1st change */
+        margin: 25px 0; /* 2nd change */
+    }
+    
+    /* Experience grid for tablet */
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr); /* 1st change */
+        gap: 20px; /* 2nd change */
+    }
+    
+    /* Social container for tablet */
+    .social-container {
+        justify-content: space-around; /* 1st change */
+        gap: 20px; /* 2nd change */
+    }
+}
+
+/* DESKTOP STYLES (1025px and up) */
+@media (min-width: 1025px) {
+    /* Header changes */
+    h1 {
+        font-size: 4rem; /* 1st change */
+        padding: 40px; /* 2nd change */
+    }
+    
+    h2 {
+        font-size: 2.5rem; /* 1st change */
+        margin-bottom: 2rem; /* 2nd change */
+    }
+    
+    /* Body changes */
+    body {
+        padding: 50px 40px; /* 1st change */
+        font-size: 1.1rem; /* 2nd change */
+    }
+    
+    /* Section changes */
+    section {
+        padding: 40px; /* 1st change */
+        margin: 40px 0; /* 2nd change */
+    }
+    
+    /* Experience grid for desktop */
+    .experience-grid {
+        grid-template-columns: repeat(3, 1fr); /* 1st change */
+        gap: 30px; /* 2nd change */
+    }
+    
+    /* Social container for desktop */
+    .social-container {
+        gap: 40px; /* 1st change */
+        margin-top: 30px; /* 2nd change */
+    }
+    
+    /* Job container enhancement */
+    .experience-container {
+        display: grid; /* STRETCH GOAL: Converting to grid */
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+/* MOBILE STYLES (Updated your existing mobile query) */
+@media (max-width: 767px) {
+    body {
+        padding: 100px 10px 10px 10px; /* 1st change */
+        font-size: 0.9rem; /* 2nd change */
+    }
+    
+    .nav-menu {
+        gap: 10px; /* 1st change */
+        padding: 8px; /* 2nd change */
+    }
+    
+    .nav-menu a {
+        padding: 6px 12px; /* 1st change */
+        font-size: 0.9em; /* 2nd change */
+    }
+    
+    h1 {
+        font-size: 2.2em; /* 1st change */
+        padding: 20px; /* 2nd change */
+        margin: 20px 0;
+    }
+    
+    h2 {
+        font-size: 1.8rem; /* 1st change */
+        text-align: center; /* 2nd change */
+    }
+    
+    section {
+        padding: 20px; /* 1st change */
+        margin: 15px 0; /* 2nd change */
+    }
+    
+    .experience-container {
+        gap: 10px; /* 1st change */
+        display: flex; /* 2nd change - keeping flex for mobile */
+        flex-direction: column;
+    }
+    
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .job-date {
+        align-self: flex-start;
+    }
+
+    .social-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: var(--spacing-sm);
-        padding: 20px; 
-        }
+        gap: 15px; /* 1st change */
+        padding: 15px; /* 2nd change */
+    }
 
-        .social-link {
-        width: 200px;
+    .social-link {
+        width: 180px; /* 1st change */
+        padding: 10px 20px; /* 2nd change */
         text-align: center;
-        padding: 12px 24px;
         background-color: #007bff;
         color: white;
         text-decoration: none;
@@ -429,15 +522,15 @@
         transition: all 0.3s ease;
         display: inline-block;
         cursor: pointer;
-        }
+    }
 
-        .social-link:hover {
+    .social-link:hover {
         background-color: #0056b3;
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+    }
 
-        .social-link:active {
+    .social-link:active {
         transform: translateY(0);
-        }
-        }
+    }
+}
