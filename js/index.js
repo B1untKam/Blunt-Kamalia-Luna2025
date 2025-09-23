@@ -16,10 +16,11 @@ const skills = [
     "Data Analysis & Storytelling", 
     "Employee Experience", 
     "Change Management", 
+    "JavaScript",
     "Stakeholder Engagement", 
     "Supervisory Authority", 
     "Administrative Functions", 
-    "Public Service", 
+    "Public Health Initiatives", 
     "Training & Development", 
     "Data Management", 
     "Communication Excellence"
