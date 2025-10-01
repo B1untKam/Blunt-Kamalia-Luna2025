@@ -18,6 +18,7 @@
                 <li><a href="#Skills">Skills</a></li>
                 <li><a href="#Projects">Projects</a></li>
                 <li><a href="#Connect">Connect</a></li>
+                <li><a href="#leave-message">Leave a Message</a></li>
             </ul>
         </nav>
     </header>
@@ -70,7 +71,6 @@
                     <p class="job-description"> <strong>Collaborated with interdisciplinary research teams </strong>including health studies and computer science professionals. <strong>Conducted primary and secondary research </strong> to develop stress management content for undergraduate mobile app.<strong>Worked closely with development teams </strong> to evaluate app progress and provide constructive feedback for improvement.
 </p>
                 </div>
-
 
                                 <div class="job">
                     <div class="job-header">
@@ -135,6 +135,29 @@
     </a>
   </div>
 </section>
+
+    <section id="leave-message">
+        <h2>Leave a Message</h2>
+        <form name="leave_message">
+            <label for="usersName">Name:</label><br>
+            <input type="text" id="usersName" name="usersName" required><br>
+            
+            <label for="usersEmail">Email:</label><br>
+            <input type="email" id="usersEmail" name="usersEmail" required><br>
+            
+            <label for="usersMessage">Message:</label><br>
+            <textarea id="usersMessage" name="usersMessage" required></textarea><br>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="messages">
+        <h2>Messages</h2>
+        <ul></ul>
+    </section>
+
     </main>
+    <script src="js/index.js"></script>
 </body>
 </html>
