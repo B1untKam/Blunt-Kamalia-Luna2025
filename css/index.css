@@ -787,7 +787,60 @@ h2 {
 .published-link:hover {
     color: var(--accent-hover);
 }
+/* ===== PUBLISHED - FEATURED ===== */
+.published-item.featured-pub {
+    border-color: var(--accent-warm);
+    background: linear-gradient(135deg, var(--surface) 0%, #fffbf0 100%);
+    grid-column: 1 / -1;
+}
 
+.published-item.featured-pub .published-type {
+    color: var(--accent-warm);
+}
+
+/* ===== AWARDS ===== */
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+}
+
+.award-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-4);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: var(--sp-4) var(--sp-6);
+    transition: all 0.3s ease;
+}
+
+.award-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.award-icon {
+    color: var(--accent-warm);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.award-item h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 400;
+    margin-bottom: var(--sp-1);
+}
+
+.award-item p {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    margin-bottom: var(--sp-2);
+}
 /* ===== CONNECT ===== */
 .connect-grid {
     display: grid;
@@ -989,7 +1042,11 @@ footer {
     .about-grid {
         grid-template-columns: 1fr;
     }
-    
+    /*
+    .awards-grid {
+        grid-template-columns: 1fr;
+    }
+*/
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
