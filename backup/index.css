@@ -1,0 +1,684 @@
+:root {
+    /* Neutral Base Colors */
+    --color-white: #ffffff;
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+    
+    /* Accent Colors - Strategic highlights */
+    --accent-primary: #3b82f6;      /* Professional blue for key actions */
+    --accent-primary-dark: #2563eb;
+    --accent-secondary: #10b981;    /* Success green for achievements */
+    --accent-secondary-dark: #059669;
+    --accent-tertiary: #f59e0b;     /* Warm orange for CTAs */
+    --accent-tertiary-dark: #d97706;
+    
+    /* Backgrounds */
+    --background-gradient: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
+    --section-bg: #ffffff;
+    --card-bg: #f9fafb;
+    
+    /* Text Colors */
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --text-light: #6b7280;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 15px;
+    --radius-lg: 20px;
+    --radius-full: 50px;
+    
+    /* Shadows */
+    --shadow-light: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-heavy: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    
+    /* Transitions */
+    --transition-base: all 0.3s ease;
+    --transition-slow: all 0.6s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background-gradient);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1 {
+    color: var(--gray-900);
+    font-size: 3.5em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: -1px;
+    background: var(--color-white);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-medium);
+    border-bottom: 4px solid var(--accent-primary);
+}
+
+h2 {
+    color: var(--text-primary);
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.5px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-primary);
+    border-radius: 2px;
+}
+
+p {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    text-align: justify;
+}
+
+/* ===== NAVIGATION ===== */
+header {
+    background: var(--color-white);
+    padding: var(--spacing-sm) 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow-medium);
+    border-bottom: 2px solid var(--color-gray-200);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 25px;
+    transition: var(--transition-base);
+}
+
+.nav-menu a:hover {
+    color: var(--accent-primary);
+    background: var(--color-gray-100);
+}
+
+/* ===== LAYOUT ===== */
+main {
+    margin-top: 80px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--spacing-lg);
+}
+
+/* ===== SECTIONS ===== */
+section {
+    background: var(--section-bg);
+    margin: 30px 0;
+    padding: 35px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-base);
+    animation: fadeInUp 0.6s ease forwards;
+    border: 1px solid var(--color-gray-200);
+}
+
+section:hover {
+    box-shadow: var(--shadow-heavy);
+}
+
+/* Section-specific accents */
+#About {
+    border-left: 4px solid var(--accent-primary);
+    text-align: center;
+    animation-delay: 0.1s;
+}
+
+#About h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#Experience {
+    border-left: 4px solid var(--color-gray-400);
+    animation-delay: 0.2s;
+}
+
+#Skills {
+    border-left: 4px solid var(--color-gray-400);
+    animation-delay: 0.3s;
+}
+
+#Projects {
+    border-left: 4px solid var(--color-gray-400);
+    animation-delay: 0.4s;
+}
+
+#Connect {
+    border-left: 4px solid var(--accent-secondary);
+    animation-delay: 0.5s;
+}
+
+#Connect h2::after {
+    background: var(--accent-secondary);
+}
+
+/* ===== EXPERIENCE SECTION ===== */
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.job {
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--color-gray-300);
+    background: var(--card-bg);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-base);
+    border: 1px solid var(--color-gray-200);
+}
+
+.job:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-medium);
+    border-left-color: var(--accent-primary);
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.job-title {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.job-date {
+    color: var(--text-light);
+    font-weight: 600;
+    background: var(--color-gray-200);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.job-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: var(--spacing-xs);
+}
+
+.job-description strong {
+    color: var(--text-primary);
+}
+
+.job-description em {
+    color: var(--accent-secondary);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* ===== SKILLS SECTION ===== */
+#Skills ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+#Skills li {
+    background: var(--color-gray-800);
+    color: var(--color-white);
+    padding: 15px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    transition: var(--transition-base);
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--color-gray-700);
+}
+
+#Skills li:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+    background: var(--accent-primary);
+    border-color: var(--accent-primary-dark);
+}
+
+/* ===== PROJECTS SECTION ===== */
+.projects-list {
+    list-style: none;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.projects-list:empty::after {
+    content: "Projects will be loaded via JavaScript...";
+}
+
+/* ===== CONNECT SECTION ===== */
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    border-radius: var(--radius-full);
+    transition: var(--transition-base);
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+}
+
+/* Social link variants */
+.social-link.github {
+    background: var(--color-gray-800);
+    color: var(--color-white);
+    border: 2px solid var(--color-gray-700);
+}
+
+.social-link.github:hover {
+    background: var(--color-gray-900);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.social-link.linkedin {
+    background: var(--accent-primary);
+    color: var(--color-white);
+    border: 2px solid var(--accent-primary-dark);
+}
+
+.social-link.linkedin:hover {
+    background: var(--accent-primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.social-link[href*="mailto"] {
+    background: var(--accent-secondary);
+    color: var(--color-white);
+    border: 2px solid var(--accent-secondary-dark);
+}
+
+.social-link[href*="mailto"]:hover {
+    background: var(--accent-secondary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-heavy);
+}
+
+/* ===== MESSAGE FORM SECTION ===== */
+#leave-message {
+    border-left: 4px solid var(--accent-tertiary);
+    animation-delay: 0.6s;
+}
+
+#leave-message h2::after {
+    background: var(--accent-tertiary);
+}
+
+form[name="leave_message"] {
+    display: flex;
+    flex-direction: column;
+}
+
+form[name="leave_message"] label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+form[name="leave_message"] input,
+form[name="leave_message"] textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid var(--color-gray-300);
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+    font-family: inherit;
+    transition: var(--transition-base);
+    background: var(--color-white);
+}
+
+form[name="leave_message"] input:focus,
+form[name="leave_message"] textarea:focus {
+    outline: none;
+    border-color: var(--accent-tertiary);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+form[name="leave_message"] textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+form[name="leave_message"] button {
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    background: var(--accent-tertiary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-medium);
+}
+
+form[name="leave_message"] button:hover {
+    background: var(--accent-tertiary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-heavy);
+}
+
+form[name="leave_message"] button:active {
+    transform: translateY(0);
+}
+
+/* ===== MESSAGES DISPLAY SECTION ===== */
+#messages {
+    border-left: 4px solid var(--color-gray-400);
+    animation-delay: 0.7s;
+}
+
+#messages ul {
+    list-style: none;
+    padding: 0;
+}
+
+#messages li {
+    background: var(--card-bg);
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--color-gray-300);
+    box-shadow: var(--shadow-light);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: var(--transition-base);
+    border: 1px solid var(--color-gray-200);
+}
+
+#messages li:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-medium);
+    border-left-color: var(--accent-primary);
+}
+
+#messages li a {
+    font-weight: 600;
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+#messages li a:hover {
+    color: var(--accent-primary-dark);
+    text-decoration: underline;
+}
+
+#messages li span {
+    flex: 1;
+    color: var(--text-secondary);
+}
+
+#messages li button {
+    padding: 8px 16px;
+    background: var(--color-gray-700);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition-base);
+}
+
+#messages li button:hover {
+    background: var(--color-gray-800);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* TABLET STYLES (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+        letter-spacing: -0.5px;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .nav-menu {
+        gap: 25px;
+        padding: 15px 20px;
+    }
+    
+    section {
+        padding: 30px;
+        margin: 25px 0;
+    }
+
+    #Skills ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+    
+    #Skills li {
+        padding: 12px 18px;
+        font-size: 1rem;
+    }
+    
+    .social-container {
+        justify-content: space-around;
+        gap: 20px;
+    }
+}
+
+/* DESKTOP STYLES (1025px and up) */
+@media (min-width: 1025px) {
+    h1 {
+        font-size: 4rem;
+        padding: 40px;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    body {
+        padding: 50px 40px;
+        font-size: 1.1rem;
+    }
+    
+    section {
+        padding: 40px;
+        margin: 40px 0;
+    }
+    
+    #Skills ul {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    #Skills li {
+        padding: 18px 24px;
+        font-size: 1.1rem;
+    }
+
+    .social-container {
+        gap: 40px;
+        margin-top: 30px;
+    }
+    
+    .experience-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+/* MOBILE STYLES */
+@media (max-width: 767px) {
+    body {
+        padding: 100px 10px 10px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .nav-menu {
+        gap: 10px;
+        padding: 8px;
+    }
+    
+    .nav-menu a {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+        padding: 20px;
+        margin: 20px 0;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    section {
+        padding: 20px;
+        margin: 15px 0;
+    }
+    
+    .experience-container {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #Skills ul {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    #Skills li {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+    
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .job-date {
+        align-self: flex-start;
+    }
+
+    .social-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .social-link {
+        width: 180px;
+        padding: 10px 20px;
+        text-align: center;
+    }
+}
